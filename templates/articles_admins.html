@@ -1,0 +1,125 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Proizvodi
+{% endblock %}
+
+{% block main %}
+<body>
+<!-- Page Content -->
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-lg-2">
+
+        </div>
+
+          <div class="col-sm-8">
+            <div class="row">
+              {% for article in articles %}
+                <div class="col-lg-4 col-md-6 mb-4 {{article.category}} 1">
+                  <div class="card h-100">
+                    <a href="#"><img class="card-img-top" src="{{article.image}}" alt=""></a>
+                    <div class="card-body">
+
+                      <h4 class="card-title" >
+                        <a href="#">{{article.name}}</a>
+                      </h4>
+                      <h5>{{article.price}} RSD</h5>
+                      <p class="card-text">{{article.description}}</p>
+                    </div>
+                    <div class="card-footer">
+                     <form id="removeArticle" class="form-inline">
+    	                 <div class="form-group">
+                           <button  type="button" id = "obr{{article.name}}" class="btn btn-danger dgm"  data-toggle="modal" data-target="#obrisiProizvod"> Obrisi </button>
+                       </div>
+
+                      </form>
+
+
+                    	<form id="changeArticle" class="form-inline">
+    	                 <div class="form-group">
+    	                     <button  type="button" id ="izm{{article.name}}" class="btn btn-primary dgm" data-toggle="modal"  data-target="#izmeniProizvod"> Izmeni </button>
+                       </div>
+                  	 </form>
+                  	 </div>
+                    </div>
+                 </div>
+
+              {%endfor%}
+          <!-- /.row -->
+          </div>
+
+          <div class="modal fade" id="izmeniProizvod" tabindex="-1" role="dialog" aria-labelledby="izmeniProizvod" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog" role="document">
+                      <div class="modal-content">
+
+                        <div class="modal-header">
+                          <h5 class="modal-title naslov" id="izmProizvod">Izmeni proizvod/uslugu</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+
+                      <form>
+                        <div class="form-group">
+                          <label for="nameStud" class="col-form-label">Naziv</label>
+                          <input type="text" class="form-control" id="izmNaziv">
+                        </div>
+                        <div class="form-group">
+                          <label for="surname" class="col-form-label">Cena</label>
+                          <input type="text" class="form-control" id="izmCena">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="surname" class="col-form-label">Opis</label>
+                          <input type="text" class="form-control" id="izmOpis">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="surname" class="col-form-label">Slika (url)</label>
+                          <input type="text" class="form-control" id="izmSliku">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="surname" class="col-form-label">Dostupan (0-1)</label>
+                          <input type="text" class="form-control" id="izmDostupan">
+                        </div>
+
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Izadji</button>
+                          <button id="btnUpd" type="button" class="btn btn-primary" data-dismiss="modal" data-backdrop="static" data-keyboard="false">Izmeni</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                  <div class="modal fade" id="obrisiProizvod" tabindex="-1" role="dialog" aria-labelledby="obrisiProizvod" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog" role="document">
+                      <div class="modal-content">
+
+                        <div class="modal-header">
+                          <h5 class="modal-title naslov" id="studentBut">Obrisi proizvod/uslugu</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+
+                      <p>Da li ste sigurni da zelite izbrisati proizvod/uslugu iz ponude?</p>
+
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Izadji</button>
+                          <button id="btnRmv" type="button" class="btn btn-danger">Obrisi</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+</body>
+      <!-- /.row -->
+{% endblock %}

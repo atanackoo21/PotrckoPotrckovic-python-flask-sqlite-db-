@@ -1,0 +1,150 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Utisci
+{% endblock %}
+
+{% block main %}
+             <!--<button class="btn btn-danger">Proizvodi</button>-->
+
+             <div class="col-lg-2">
+               <a href="#utisak"> <button class="btn btn-danger"><strong> Ostavi utisak </strong></button> </a>
+             </div>
+            <div class="card">
+	            <div class="card-body">
+	              <div class="row">
+                {% for impr in impressions %}
+          				 <div class="col-md-2">
+          	        <img src="https://image.ibb.co/jw55Ex/def_face.jpg" class="img img-rounded img-fluid"/>
+          	        <p class="text-secondary text-center">45 Minutes Ago</p>
+        	        </div>
+        	        <div class="col-md-10">
+        	          <p>
+        	            {% set average = ((impr.quality + impr.speed + impr.price) / 3) | int %}
+        	            <a class="float-left"><strong>Anonimni korisnik</strong></a>
+        	            {% for i in range(average) %}
+        	              <span class="float-right"><i class="text-warning fa fa-star"></i></span>
+        	            {% endfor %}
+        	         </p>
+        	        <div class="clearfix"></div>
+          	        <p>{{impr.comment}}</p>
+        	        </div>
+                {% endfor %}
+               </div>
+             </div>
+           </div>
+
+             <br>
+             <span id="sp1"> </span>
+             <br>
+
+             <div class="col-lg-10">
+
+             </div>
+
+            <style>
+                label {
+                      margin-left: -29px;
+                }
+                .btn{
+                      width:150%;
+                      height:150%;
+                }
+            </style>
+
+           <form id="utisak">
+
+                <label for="optionsRadios"><strong>Kvalitet usluge</strong></label>
+
+                <div class="form-group form-check-inline">
+                  <input class="form-check-input" type="radio" name="kvalitet" id="inlineRadio1" value="1">
+                  <label class="form-check-label" for="inlineRadio1">1 (lose)</label>
+                </div>
+
+                <div class="form-group  form-check-inline">
+                  <input class="form-check-input" type="radio" name="kvalitet" id="inlineRadio2" value="2">
+                  <label class="form-check-label" for="inlineRadio2">2 (onako)</label>
+                </div>
+
+                <div class="form-group form-check-inline">
+                  <input class="form-check-input" type="radio" name="kvalitet" id="inlineRadio3" value="3">
+                  <label class="form-check-label" for="inlineRadio3">3 (dobar)</label>
+                </div>
+
+                <div class="form-group form-check-inline">
+                  <input class="form-check-input" type="radio" name="kvalitet" id="inlineRadio4" value="4">
+                  <label class="form-check-label" for="inlineRadio4">4 (vrlo dobar)</label>
+                </div>
+
+                <div class=" form-group form-check-inline">
+                  <input class="form-check-input" type="radio" name="kvalitet" id="inlineRadio5" value="5">
+                  <label class="form-check-label" for="inlineRadio5">5 (odlican)</label>
+                </div>
+                <br>
+                <label for="optionsRadios"><strong>Brzina usluge</strong></label>
+
+                <div class="form-group form-check-inline">
+                  <input class="form-check-input" type="radio" name="brzina" id="inlineRadio11" value="1">
+                  <label class="form-check-label" for="inlineRadio11">1 (presporo)</label>
+                </div>
+
+                <div class="form-group  form-check-inline">
+                  <input class="form-check-input" type="radio" name="brzina" id="inlineRadio22" value="2">
+                  <label class="form-check-label" for="inlineRadio22">2 (sporo)</label>
+                </div>
+
+                <div class=" form-group form-check-inline">
+                  <input class="form-check-input" type="radio" name="brzina" id="inlineRadio33" value="3">
+                  <label class="form-check-label" for="inlineRadio33">3 (srednje)</label>
+                </div>
+
+                <div class=" form-group form-check-inline">
+                  <input class="form-check-input" type="radio" name="brzina" id="inlineRadio44" value="4">
+                  <label class="form-check-label" for="inlineRadio44">4 (brz)</label>
+                </div>
+
+                <div class=" form-group form-check-inline">
+                  <input class="form-check-input" type="radio" name="brzina" id="inlineRadio55" value="5">
+                  <label class="form-check-label" for="inlineRadio55">5 (prebrzo)</label>
+                </div>
+                <br>
+
+                <label for="optionsRadios"><strong>Cena usluge</strong></label>
+
+                <div class="form-group form-check-inline">
+                  <input class="form-check-input" type="radio" name="cena" id="inlineRadio111" value="1">
+                  <label class="form-check-label" for="inlineRadio111">1 (preskupo)</label>
+                </div>
+
+                <div class="form-group  form-check-inline">
+                  <input class="form-check-input" type="radio" name="cena" id="inlineRadio222" value="2">
+                  <label class="form-check-label" for="inlineRadio222">2 (onako)</label>
+                </div>
+
+                <div class="form-group form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="cena" id="inlineRadio333" value="3">
+                  <label class="form-check-label" for="inlineRadio333">3 (solidno)</label>
+                </div>
+
+                <div class=" form-group form-check-inline">
+                  <input class="form-check-input" type="radio" name="cena" id="inlineRadio444" value="4">
+                  <label class="form-check-label" for="inlineRadio444">4 (jeftino)</label>
+                </div>
+
+                <div class=" form-group form-check-inline">
+                  <input class="form-check-input" type="radio" name="cena" id="inlineRadio555" value="5">
+                  <label class="form-check-label" for="inlineRadio555">5 (dzabe)</label>
+                </div>
+
+              	<div class="form-group">
+            		<!--<label class="control-label ">Komentar</label>-->
+            		<textarea class="form-control" cols="80" id="message" name="message" rows="10" placeholder="Komentar, sugestija, primendba za vaseg omiljenog Potrckovica :)"></textarea>
+            	</div>
+
+              <div class="form-check form-check-inline">
+
+              <button id="komentiraj" type="submit" onclick="ajaxZahtev()" class="btn btn-primary">Potvrdi</button>
+            </form>
+
+
+{% endblock %}

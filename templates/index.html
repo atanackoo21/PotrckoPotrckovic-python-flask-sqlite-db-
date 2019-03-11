@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+<div>
+  Lista proizvoda
+</div>
+
+<table class="table table-striped">
+      <tr>
+          <th> Symbol </th>
+          <th> Shares </th>
+          <th> Price </th>
+          <th> Transacted </th>
+      </tr>
+      <tbody>
+          {% for hist in history%}
+          <tr>
+              <td>{{hist.symbol}}</td>
+              <td>{{hist.shares}}</td>
+              <td>{{hist.price}}</td>
+              <td>{{hist.transacted}}</td>
+          </tr>
+          {%endfor%}
+      </tbody>
+</table>
+
+<div id="footer">
+  Marko Mleko 2017
+</div>
+
+
+
+{% endblock %}

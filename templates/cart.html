@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Korpa
+{% endblock %}
+
+{% block main %}
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+
+      </div>
+
+
+      <div class="col-lg-6">
+                <div class="list-group">
+                    <h2><a href="/cart">Korpa<i class="fas fa-cart-arrow-down"></i></a></h2>
+
+                    <table class="table tb table-striped table-condensed">
+
+                        <thead class="bg-info okf">
+                      <tr>
+                        <th>Naziv</th>
+                        <th >Cena</th>
+                        <th >Kolicina</th>
+                      </tr>
+                        </thead>
+
+                      <tbody class="ttbody">
+                      {% for c in cart %}
+
+                        <tr>
+                          <td>{{c.name}}</td>
+                          <td class="textSr">{{c.price}}</td>
+                          <td class="textSr">{{c.quantity}}</td>
+
+                        </tr>
+
+                      {% endfor %}
+
+                      <tfoot>
+                        <tr>
+                          <td id="racun" class="okf bg-info"><b> Iznos racuna: <span >{{bill}} RSD </b></span></td>
+                        </tr>
+
+                        <tr>
+                          <td><span><btn onclick="odustanak()" class="btn btn-danger">Odustani</btn></span> <span><btn onclick="kupovina()" class="btn btn-success">Potvrdi kupovinu</btn></span></td>
+                        </tr>
+
+                      </tfoot>
+
+
+                    </tbody>
+
+
+
+                    </table>
+
+                  </div>
+
+                </div>
+
+
+      <div class="col-lg-3">
+      </div>
+
+      <br> <br>
+
+
+        	        <div class="col-md-12">
+
+
+        	          <div class="list-group">
+                    <h2><a href="/cart">Prethodne kupovine</h2>
+
+                    <table class="table tbl table-striped table-condensed">
+
+                        <thead class="bg-info okf">
+                      <tr>
+                        <th >Cena</th>
+                        <th >Vreme</th>
+                      </tr>
+                        </thead>
+
+                      <tbody class="ttbody">
+                      {% for b in buy %}
+
+                        <tr>
+
+                          <td class="textSrd">{{b.price}}</td>
+                          <td class="textSr">{{b.date}}</td>
+
+                        </tr>
+
+                      {% endfor %}
+
+
+
+                    </tbody>
+
+
+
+                    </table>
+
+                  </div>
+
+        	        </div>
+
+
+
+</div>
+
+</body>
+{% endblock %}

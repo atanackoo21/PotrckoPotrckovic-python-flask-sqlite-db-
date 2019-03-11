@@ -1,0 +1,219 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Karijera
+{% endblock %}
+
+{% block main %}
+<body>
+
+<div class="container text-secondary">
+
+    <div class="row">
+
+          <div class="col-lg-5 text-left">
+
+            <h1 class="text-primary"> Pridruzite se nasem timu </h1>
+            <p>
+            At abas, we are proud to be a global family, working together in an environment based on team spirit, job satisfaction, fairness, trust and passion for making our business succeed. Where each team member has the opportunity to grow their skills and pursue their unique career path. Our founders and many early team members are still actively engaged in the abas family and are eager to welcome new members with into the "spirit of abas" – the ideas, concepts and values that shape our business.
+            </p>
+
+            </div>
+
+
+
+        <div class="col-lg-7 sidenav">
+            <div class="well box">
+            <img id="sl1" src="http://www.nurexcargo.com/wp-content/uploads/2017/07/deliver.jpg" alt=" ">
+            </div>
+        </div>
+            <!-- /.row -->
+    </div>
+    <hr>
+          <!-- /.col-lg-9 -->
+</div>
+
+    <div class="container text-secondary">
+    <div class="row">
+        <div class="col-md-4">
+            <h1 id="hsr" class="text-danger"> Posao za studente </h1>
+             Campus flair at abas: Whether you're an intern, a working student, or a recent grad, at abas we pride ourselves on providing an excellent environment for the next generation of professionals. Are you eager to tackle creative challenges, participate in exciting projects, and acquire valuable hands-on experience?
+            <img id="sl23" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYESGipIqKDO97yTL0CIrKuMlOomWTjkWmstc5dY90JM33x6WHlw" />
+            <br> <br>
+            <button class="btn btn-danger karijeraBut" data-toggle="modal" data-target="#studentBut">Apliciraj za posao</button>
+        </div>
+
+        <div class="col-md-4" >
+            <h1 id="hsr" class="text-info"> Posao za profesionalce </h1>
+             Are you already an experienced professional in your field and looking for new possibilities to develop your career? At abas, we like to focus on developing and expanding the skills and experience of our team members. Exciting tasks, challenging projects, and innovative technologies ensure that there is never a dull moment.
+            <img id="sl2" src="data:image/jpeg;base64,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" />
+            <br> <br>
+            <button class="btn btn-info karijeraBut" data-toggle="modal" onclick="posaoProfi()">Apliciraj za posao</button>
+        </div>
+
+        <div class="col-md-4">
+            <h1 id="hsr" class="text-success"> Posao za operatere </h1>
+                You’ve successfully completed your degree—congratulations! Now you’re looking to transition to a job and begin your career. abas is the perfect place to start. We provide excellent professional development opportunities in an international environment. At abas, you can make the most of your talents and abilities.
+            <img id="sl2" src="data:image/jpeg;base64,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" />
+            <br> <br>
+            <button class="btn btn-success karijeraBut" data-toggle="modal" data-target="#operaterBut">Apliciraj za posao</button>
+        </div>
+    </div>
+    <hr>
+    </div>
+
+    <div>
+        <p class="parag">Neko želi da stekne iskustvo i da nauči kako da bude odgovoran, drugima je važna fleksibilnost koju Potrcko pruža, kako bi mogli da postignu mnogo više nego što se od njih očekuje. Neki su u Potrcko tim došli da zarade, a potom su uvideli da imaju liderske sposobnosti i da pozicija glavnog menadžera više uopšte nije tako daleka.
+        Koji god da je tvoj razlog, Potrcko tim ti pomaže da upoznaš sebe i da budeš bolji. Tu smo da podstaknemo tvoju individualnost, poštujući tvoje ciljeve, navike i vreme. Ponosni smo što smo deo toga.
+        </p>
+        <br><iframe width="550" height="250" src="http://www.youtube.com/embed/wVTAm3y4cYk?html5=1"></iframe><br>
+    </div>
+
+    <div>
+      <br>
+      <h3 class="text-success"> Zanimljiva i nesvakidasnja ispovest jednog našeg kolege </h3>
+      <p class="parag">
+
+      Zovem se Marko Kraljević i to ljude, naravno, uvek asocira na čuvenog heroja iz narodnih pesama. Tako sam, jedne večeri, došao na gajbu nekoj ekipi koja je pravila žurku i čim su mi otvorili vrata video sam da su pijani kao letve. Da stvar bude još gora, kad sam im uručio „džambo“ picu, shvatili su da nemaju ni dinar, jer su sve potrošili na piće. Onda je počelo grupno izvinjavanje, a meni je samo bilo u glavi kako dajem tih 1.000 dinara iz svog džepa, a nisam ih još ni zaradio – priča nam imenjak narodnog heroja.
+
+Sve se dobro završilo, zahvaljujući dečku čiji je bio stan, koji ga je pitao kako se zove.
+
+A kad je Marko rekao svoje ime i prezime, društvo ga je pozvalo na pivo, kao i da se posle radnog vremena vrati kod njih na žurku.
+
+U međuvremenu je došlo još ljudi koji su uspeli da „skrpe“ dovoljno para za picu.
+
+Verovali ili ne, na toj žurci, koja je bila pre više od dve godine, upoznao sam svoju sadašnju devojku. Sudbina. <br> Izvor: <a href="http://nadlanu.com/257564/avanture-dostavljaca-hrane-nismo-imali-pojma-da-im-je-toliko-zabavan-posao/"> nadlanu.com </a>
+
+      </p>
+    </div>
+
+    <!--U ovom odeljku idu modalni prozori za konkurisanje za posao-->
+
+    <!-- Modal -->
+    <div class="modal fade" id="studentBut" tabindex="-1" role="dialog" aria-labelledby="studentBut" aria-hidden="true">
+      <div class="modal-dialog modal-dialog" role="document">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <h5 class="modal-title naslov" id="studentBut">Konkurisi za posao</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+        <form>
+          <div class="form-group">
+            <label for="nameStud" class="col-form-label">Ime</label>
+            <input type="text" class="form-control" id="name">
+          </div>
+          <div class="form-group">
+            <label for="surname" class="col-form-label">Prezime</label>
+            <input type="text" class="form-control" id="surname">
+          </div>
+
+          <div class="form-group">
+            <label for="surname" class="col-form-label">Email</label>
+            <input type="text" class="form-control" id="email">
+          </div>
+
+          <div class="form-group">
+            <label for="godiste" id="godinaRodjenja" class="col-form-label">Godina rodjenja</label>
+            <select>
+                {% for i in range (1950, 2002) %}
+                 <option name="godiste"  class="form-control" id="godiste" value="{{i}}">{{i}}.</option>
+                {%endfor%}
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="godiste" id="godinaRodjenja" class="col-form-label">Fakultet</label>
+            <select>
+                {% for fax in fakulteti%}
+                 <option  class="form-control" id="faculty" name="faculty" value="{{fax}}">{{fax}}</option>
+                {%endfor%}
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="zanimanje" class="col-form-label">Zanimanje</label>
+            <input disabled="disabled" type="text" class="form-control" id="zanimanje" value="Student">
+          </div>
+
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Motivacaiona poruka</label>
+            <textarea class="form-control" id="message"></textarea>
+          </div>
+        </form>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Izadji</button>
+            <button type="submit" onclick="prijavaZaPosao()" class="btn btn-primary">Posalji</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Prvi modalni prozor-->
+
+    <div class="modal fade" id="operaterBut" tabindex="-1" role="dialog" aria-labelledby="operaterBut" aria-hidden="true">
+      <div class="modal-dialog modal-dialog" role="document">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <h5 class="modal-title naslov" id="studentBut">Konkurisi za posao operatera</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+        <form>
+          <div class="form-group">
+            <label for="nameStud" class="col-form-label">Ime</label>
+            <input type="text" class="form-control" id="nameOp">
+          </div>
+          <div class="form-group">
+            <label for="surname" class="col-form-label">Prezime</label>
+            <input type="text" class="form-control" id="surnameOp">
+          </div>
+
+          <div class="form-group">
+            <label for="surname" class="col-form-label">Email</label>
+            <input type="text" class="form-control" id="emailOp">
+          </div>
+
+          <div class="form-group">
+            <label for="godiste" id="godinaRodjenja" class="col-form-label">Godina rodjenja</label>
+            <select>
+                {% for i in range (1950, 2002)%}
+                 <option name="godisteOp"  class="form-control" id="godisteOp" value="{{i}}">{{i}}.</option>
+                {%endfor%}
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Motivacaiona poruka</label>
+            <textarea class="form-control" id="messageOp"></textarea>
+          </div>
+        </form>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Izadji</button>
+            <button type="submit" onclick="prijavaZaPosaoOp()" class="btn btn-primary">Posalji</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Prvi modalni prozor-->
+
+
+
+
+
+
+</body>
+{% endblock %}

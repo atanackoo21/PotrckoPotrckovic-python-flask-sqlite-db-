@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Utisci
+{% endblock %}
+
+{% block main %}
+<body>
+
+     <div class="container">
+
+        <div class="row">
+
+          <div class="col-lg-1">
+
+          </div>
+          <!-- /.col-lg-3 -->
+
+          <div class="col-lg-8 text-left">
+
+            <h1 class="text-info">Dobrodošli kod vašeg omiljenog i najbržeg Potrčka Potrčkovića</h1>
+            <p>
+                Potrčka Potrčkovića je najmlađa  i najbrža novosadska kućna dostava.
+                Postavili smo sistem rada i uveli standard OD VRATA DO VRATA ZA POLA SATA (ili manje) koje ostale službe pokušavaju da dostignu.
+                Poznajemo naš Novi Sad i bezbroj puta smo prošli kroz više od 1000 novosadskih ulica isporučujući pošiljke, deleći letke, pozivnice.
+                Trudimo se da ispunimo Vaša obećanja i pošiljku isporučimo sigurno i tačno na vreme,bez obzira da li je pošiljka mala ili veća u Novom Sadu,Petrovaradinu,Veterniku ili Sremskoj Kamenici .
+                Naš glavni zadatak je da budemo vaš novosadski potrčko na kojeg možete da se pouzdate i ne brinete, bilo da ste nam poverili običnu pošiljku, pošiljku sa pouzećem, poruku, letak ili dragu uspomenu
+            </p>
+                <hr>
+                <h2 class="text-danger">
+                    Pitate se koje usluge vršimo?<br>
+                </h2>
+            <p>
+                    Na Vaša vrata dostavljamo hranu iz svih novosadskih ugostiteljskih objekata, robu široke potrošnje iz svih prodavnica. Dostavljamo cveće i poklone, uplaćujemo tikete, plaćamo račune, a otvoreni smo i za ispunjavanje maštovitih i egzotičnih narudžbina.
+            </p>
+                <hr>
+
+                <h3 class="default">Novosadjani i njihove navike</h3>
+                <p>
+                    Najpopularnija hrana u Novom Sadu je definitivno pica. Novosađani imaju veliki izbor picerija koji nude vrhunske pice po originalnim italijanskim receptima. Dostava pice je popularna u svakoj prilici - na poslu, kući posle radnog vremena, kada uživate sa društvom uz fudbalsku utakmicu ili sa drugaricama gledate omiljenu seriju. Pica je najbolja kada je vruća, a specijalna pakovanja i torbe koje koriste dostavljači omogućavaju da pica stigne na vašu adresu topla i sveža, kao da je upravo izašla iz peći na drva.
+
+                    Osim pice, u Novom Sadu se često jede roštilj - banjalučki i sarajevski ćevapi, pljeskavice, vešalice i pileće meso. Uz dobar prilog i brzu dostavu, roštilj je sigurno odličan izbor. Popularni “indeks” sednviči su najbolji u Novom Sadu i svi ih vole i često ih naručuju. Giros je takođe veoma popularan i ukusan, bilo da naručujete pileći, svinjski ili teleći. Ne zaboravite samo da dodate tradicionalnu grčku caciki salatu - odlično ide uz giros. Probajte i suvlaki - drugi specijalitet grčke kuhinje, sigurno će vam se svideti.
+
+                    Kao što smo rekli, kineska kuhinja je među omiljenima u Novom Sadu. Lagana, zdrava, sa dosta začina i bogata raznim ukusima, predstavlja pravi obrok koji može da bude na vašoj adresi za 30-ak minuta. Možete da oprobate vašu veštinu i da jedete kineskim štapićima, a ukoliko vam ne ide, uvek se možete vratiti na provereni escajg. Kineska hrana se isporučuje na adresu u odličnim pakovanjima koja omogućuju da hrana bude dugo topla i iz kojih može da se jede, tako da nemate razloga da prljate tanjire i da ih posle perete. Vreme koje biste potrošili na pripremanje hrane i pranje posuđa, provedite sa vašim najbližima. Danas vam svakako nedostaje vremena za vas i za vašu porodicu, zar ne?
+
+                    Svi najbolji restorani u Novom Sadu na samo par klikova od vas. Kod Potrčka Potrčkovića ćete pronaći najbolju hranu u Novom Sadu. Naručivanje hrane je lako, brzo i besplatno. Naručite hranu za kućnu dostavu preko Potrčka i uživajte u vašem ukusnom i toplom obroku. Prijatno!
+                </p>
+            </div>
+
+
+
+        <div class="col-lg-3 sidenav">
+            <div class="well box small">
+            <a href="https://www.instagram.com/?hl=en"> <img src="{{ url_for('static', filename='picture/inst.png') }}" alt=" ">
+            </div>
+            <br>
+            <div class="well">
+                    <a href="https://www.facebook.com/"> <img src="{{ url_for('static', filename='picture/fb.png') }}" alt=" "> </a>
+            </div>
+        </div>
+
+            <!-- /.row -->
+
+          </div>
+
+          <!-- /.col-lg-9 -->
+
+        </div>
+</body>
+
+{% endblock %}

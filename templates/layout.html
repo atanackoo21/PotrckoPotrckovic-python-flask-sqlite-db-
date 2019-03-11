@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="{{ url_for('static', filename='potrckovaSkripta.js') }}"></script>
+
+        <!--validacija-->
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+        <!-- documentation at http://getbootstrap.com/docs/4.0/, alternative themes at https://bootswatch.com/4-alpha/ -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"/>
+
+
+        <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href='static/styles.css' rel="stylesheet"/>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+        <link rel="shortcut icon" href="https://cdn3.iconfinder.com/data/icons/transportation-soft/512/truck_delivery_logistics_transportation_shipping_deliver_shipment_v3-512.png" type="image/png">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <title>Potrčko</title>
+
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-expand-md navbar-light bg-light border">
+            <a class="navbar-brand" href="/"><span class="blue"><i> Potrčko Potrčković </i> </span></a>
+            <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar" data-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <ul class="navbar-nav ml-auto mt-2">
+                    <li class="nav-item"><a class="nav-link" href="/"> <img id="slikaMala" src="https://images.vexels.com/media/users/3/127555/isolated/preview/8f6b4e3941b468ff8a834142eeec1389-hombre-de-entrega-en-moto-by-vexels.png"></a></li>
+                </ul>
+
+            <div class="collapse navbar-collapse" id="navbar">
+                {% if session.user_id %}
+                    <ul class="navbar-nav mr-auto mt-2">
+                        <li class="nav-item"><a class="nav-link" href="/about">O nama</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/impressions">Utisci</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/career">Karijera</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/partner">Partneri</a></li>
+                        <li class="nav-item"><h3><a class="crt"  href="/cart">Korpa<i class="fas fa-cart-arrow-down"></i></a></h3></li>
+                        </ul>
+
+                    <ul class="navbar-nav ml-auto mt-2">
+                        <li class="nav-item"><a class="nav-link" href="/logout">Odjavi se</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/password">Promeni lozinku</a></li>
+
+                    </ul>
+                {% else %}
+                    <ul class="navbar-nav ml-auto mt-2">
+                        <li class="nav-item"><a class="nav-link" href="/register">Registruj se</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/login">Prijavi se</a></li>
+                    </ul>
+                {% endif %}
+            </div>
+        </nav>
+
+        {% if get_flashed_messages() %}
+            <header>
+                <div class="alert alert-primary border text-center" role="alert">
+                    {{ get_flashed_messages() | join(" ") }}
+                </div>
+            </header>
+        {% endif %}
+
+        <main class="container p-5">
+            {% block main %}{% endblock %}
+        </main>
+
+
+        <footer class="py-5 bg-dark footer">
+
+                <div class="container">
+
+                        <div class="row">
+
+
+                            <div class="col-sm-9  col-lg-4 col-md-6">
+                                <ul>
+                                    <li class="belo">Zapratite nas na drustvenim mrezama i budite uvek u toku sa aktuelnostima, popustima i promocijama</a>
+                                    </li>
+                                </ul>
+                                    <ul class="inline">
+
+                                        <li><a href="https://www.facebook.com/">
+                                            <img alt="" src="http://www.myiconfinder.com/uploads/iconsets/256-256-671dcbd218ad978e77115f7e3475e454-facebook.png"
+                                            width="50" height="42"></a>
+                                        </li>
+                                        <li><a href="https://www.instagram.com/?hl=en">
+                                            <img alt="" src="data:image/jpeg;base64,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"
+                                            width="50" height="42"></a>
+                                        </li>
+                                        <li><a href="https://twitter.com/?lang=en">
+                                            <img alt="" src="https://cdn2.iconfinder.com/data/icons/social-media-with-original-colors/256/icon-twitter-tweet.png"
+                                            width="50" height="42"></a>
+                                        </li>
+                                    </ul>
+                            </div>
+
+                <div class="col-sm-9 col-lg-2 col-md-6">
+                        <p class="belo">Kontakt telefon: <br> 021/21-12-121 <br> 061/212-121 </p>
+                        <img alt="" src="http://webiconspng.com/wp-content/uploads/2017/01/Phone-Icon-PNG.png"
+                        width="110" height="42"></a>
+                </div>
+
+                <div class="col-sm-9 col-lg-3 col-md-6">
+                        <p class="belo">Radno vreme svakog dana: <br> 00-24h</p>
+                        <img class="slika_sredina" alt="Nooo" src="https://d30y9cdsu7xlg0.cloudfront.net/png/22636-200.png"
+                        width="150" height="48"></a>
+                </div>
+
+                <div class="col-sm-9 col-lg-3 col-md-6">
+                        <p class="belo">Plaćajte na način koji vam najviše odgovara</p>
+                        <a href="https://www.paypal.com/rs/webapps/mpp/merchant?gclid=EAIaIQobChMI6vH8zaSQ3AIVlU8YCh0ezwsOEAAYASAAEgJNmfD_BwE&gclsrc=aw.ds&dclid=CLzLzc-kkNwCFYWadwodcXkImQ"><img class="slika_sredina_desno" alt="Nooo" src="https://www.icedamremovalguys.com/wp-content/uploads/paypal-logo.png"
+                        width="250" height="90"></a>
+                </div>
+
+            </div>
+
+
+                <hr>
+                <div class="container">
+                        <p class="m-1 text-center text-white">Linkovi, tekstovi i fotografije preuzeti sa internet sajtova za potrebe projektnog zadatka</p>
+                </div>
+
+
+            </div>
+        </footer>
+    </body>
+
+</html>
